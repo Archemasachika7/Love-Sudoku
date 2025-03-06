@@ -348,6 +348,10 @@ completeDareBtn.addEventListener('click', () => {
     solvedGrid.style.display = 'grid';
     messageDisplay.textContent = "Here's the complete solution! 🎯";
   }
+
+  // Increment Dare Score
+  dareScore++; // Add this line
+  updateDareScore(); // Update the display
 });
 
 // Handle Dare Skip
