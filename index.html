@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romantic Sudoku 💖</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Romantic Sudoku 💖</h1>
+      <p class="tagline">Where love meets logic.</p>
+    </header>
+
+    <div class="rules">
+      <h2>Sudoku Rules</h2>
+      <ul>
+        <li>Each row, column, and 3x3 square must contain the numbers 1–9.</li>
+        <li>No number can be repeated in a row, column, or 3x3 square.</li>
+        <li>The sum of every row, column, and 3x3 square must be 45.</li>
+      </ul>
+    </div>
+
+    <div class="game-container">
+      <div class="puzzle-section">
+        <h3>Your Sudoku Puzzle</h3>
+        <div class="sudoku-grid" id="sudoku-grid"></div>
+      </div>
+      <div class="solution-section">
+        <h3>Solved Puzzle</h3>
+        <div class="sudoku-grid" id="solved-grid" style="display: none;"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="hint-btn" class="btn">Hint 💡</button>
+      <button id="reset-btn" class="btn">Reset 🔄</button>
+      <button id="new-game-btn" class="btn">New Game 🎲</button>
+      <button id="check-solution-btn" class="btn">Check Solution ✔️</button>
+      <select id="difficulty" class="btn">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <div class="stats">
+      <div id="timer">⏰ Time: 00:00</div>
+      <div id="skips-remaining">⏭️ Skips Remaining: 2</div>
+      <div id="hints-remaining">💡 Hints Remaining: 5</div>
+      <div id="dare-score">💖 Dare Score: 0</div>
+    </div>
+
+    <div id="message" class="message"></div>
+    <div id="dare-message" class="dare-message"></div>
+  </div>
+
+  <!-- Difficulty Selection Pop-up -->
+  <div id="difficulty-popup" class="difficulty-popup">
+    <div class="difficulty-content">
+      <h3>Choose Difficulty Level</h3>
+      <p>Select how challenging you want your romantic puzzle to be!</p>
+      <div class="difficulty-buttons">
+        <button id="easy-btn" class="difficulty-btn">
+          <span class="difficulty-name">Easy</span>
+          <span class="difficulty-desc">61 prefilled cells</span>
+          <span class="difficulty-hearts">💖💖💖</span>
+        </button>
+        <button id="medium-btn" class="difficulty-btn">
+          <span class="difficulty-name">Medium</span>
+          <span class="difficulty-desc">51 prefilled cells</span>
+          <span class="difficulty-hearts">💖💖</span>
+        </button>
+        <button id="hard-btn" class="difficulty-btn">
+          <span class="difficulty-name">Hard</span>
+          <span class="difficulty-desc">41 prefilled cells</span>
+          <span class="difficulty-hearts">💖</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dare Pop-up -->
+  <div id="dare-popup" class="dare-popup">
+    <div class="dare-content">
+      <h3>Your Dare:</h3>
+      <p id="dare-text"></p>
+      <div class="dare-buttons">
+        <button id="complete-dare-btn" class="btn">Complete Dare</button>
+        <button id="skip-dare-btn" class="btn">Skip Dare</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Number Input Pop-up -->
+  <div id="number-popup" class="number-popup">
+    <div class="number-content">
+      <h3>Enter a Number (1-9)</h3>
+      <div class="number-pad">
+        <button class="number-btn" data-number="1">1</button>
+        <button class="number-btn" data-number="2">2</button>
+        <button class="number-btn" data-number="3">3</button>
+        <button class="number-btn" data-number="4">4</button>
+        <button class="number-btn" data-number="5">5</button>
+        <button class="number-btn" data-number="6">6</button>
+        <button class="number-btn" data-number="7">7</button>
+        <button class="number-btn" data-number="8">8</button>
+        <button class="number-btn" data-number="9">9</button>
+      </div>
+      <button id="close-number-popup" class="btn">Close</button>
+    </div>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="completeDareSound" src="completeDare.mp3"></audio>
+  <audio id="skipDareSound" src="skipDare.mp3"></audio>
+  <audio id="hintSound" src="hint.mp3"></audio>
+  <audio id="winSound" src="win.mp3"></audio>
+  <audio id="backgroundMusic" src="backgroundMusic.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
